@@ -20,8 +20,7 @@ webSocket.on('connection', connection => {
     try {
         const data = JSON.parse(message);
         const currentUser = findUser(data.username)
-        const userToReceive = findUser(data.target)
-        console.log(data)
+        const userToReceive = findUser(data.target)        
     
         switch (data.type) {
             case Types.SignIn:
