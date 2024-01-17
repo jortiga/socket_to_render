@@ -1,11 +1,6 @@
-const http = require("http")
-const socket = require("websocket").server
-const server = http.createServer(() => {
-})
-
-server.listen(3000, () => {
-
-})
+const WebSocket = require('ws')
+const PORT = process.env.PORT || 3000;
+const webSocket = new require('ws').Server({ port: PORT })
 
 const users = []
 
@@ -18,9 +13,6 @@ const Types = {
     IceCandidates: "IceCandidates",
     EndCall: "EndCall",
 }
-
-const webSocket = new socket({httpServer: server})
-
 
 webSocket.on('request', (req) => {
     const connection = req.accept();
