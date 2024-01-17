@@ -18,7 +18,7 @@ webSocket.on('connection', connection => {
   connection.on('message', message => {
     console.log(`Received message => ${message}`)
     try {
-        const data = JSON.parse(message.utf8Data);
+        const data = JSON.parse(message);
         const currentUser = findUser(data.username)
         const userToReceive = findUser(data.target)
         console.log(data)
