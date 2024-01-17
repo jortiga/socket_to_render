@@ -18,6 +18,7 @@ webSocket.on('request', (req) => {
     const connection = req.accept();
 
     connection.on('message', (message) => {
+        setInterval(function () {ws.send('Hello! Message From Server!!')}, 1000);
         try {
             const data = JSON.parse(message.utf8Data);
             const currentUser = findUser(data.username)
