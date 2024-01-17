@@ -73,7 +73,7 @@ webSocket.on('connection', connection => {
         console.log(e.message)
     }
   })
-  setInterval(function () {connection.send('Hello! Message From Server!!')}, 1000);
+  
   connection.on('close', () => {
         users.forEach(user => {
             if (user.conn === connection) {
