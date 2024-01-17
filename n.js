@@ -1,6 +1,6 @@
-const WebSocket = require('ws')
+const XWebSocket = require('ws')
 const PORT = process.env.PORT || 3000;
-const webSocket = new require('ws').Server({ port: PORT })
+const webSocket = new XWebSocket.Server({ port: PORT })
 
 const users = []
 
