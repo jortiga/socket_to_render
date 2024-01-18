@@ -19,6 +19,7 @@ const requestButton = document.getElementById('requestButton');
 const shareCallId = document.getElementById('shareCallId');
 const shareButton = document.getElementById('shareButton');
 
+let myIdx = generateRandomAlphanumeric(2);
 let remoteDS = null;
 let localSD = null;
 var candidates = [];
@@ -126,7 +127,7 @@ window.onload = async function() {
 	const labelElement = document.createElement('label');
 
 	// Set the label's text content based on a value from JavaScript
-	const labelText = generateRandomAlphanumeric(2); // Replace with your desired label text
+	const labelText = myIdx; // Replace with your desired label text
 	labelElement.textContent = labelText;
 	myid.value = labelText;
 
@@ -161,12 +162,12 @@ requestButton.onclick = async () => {
 };
 
 // Event handler for when the connection is established
-socket.addEventListener('open', (event) => {
+	socket.addEventListener('open', (event) => {
 	console.log('Signing In ' + myid.value);
 
 	var signinData = {
 		type: 'SignIn',
-		username: myid.value,
+		username: myIdx,
 		data: { message: 'Signing in' }
 	};
 
