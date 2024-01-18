@@ -91,14 +91,20 @@ pc.onicecandidate  = (event) => {
 };
 
 window.onload = async function() {
-    localStream = await navigator.mediaDevices.getUserMedia({ video: true });
-  
-    // Push tracks from local stream to peer connection
-	  localStream.getTracks().forEach((track) => {
-	    pc.addTrack(track, localStream);
-	  });
+	try {
+		localStream = await navigator.mediaDevices.getUserMedia({ video: true });
 
- 	webcamVideo.srcObject = localStream;
+	// Push tracks from local stream to peer connection
+		localStream.getTracks().forEach((track) => {
+			pc.addTrack(track, localStream);
+		});
+
+		webcamVideo.srcObject = localStream;
+	} catch (error) {
+		
+	console.error("Error accessing user media:", error);
+	// Handle the error here, such as displaying an error message to the user.
+	}
 
 	// Pull tracks from remote stream, add to video stream
 	// pc.ontrack = (event) => {
