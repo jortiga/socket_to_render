@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>    
-    <title>WebSocket Homepage</title>
+    <title>Remote Player</title>
 </head>
 <body>
-	<button id="webcamButton">Start webcam</button>
+  <div id="windowId">
+    <!-- Your label will be added here dynamically -->
+  </div>
+	
     <div class="videos">
+      <div id="labelContainer">
+        <label id="dynamicLabel">YOUR ID:</label>
+      </div>
       <span>
         <h3>Local Stream</h3>
-          <div>
+      <div>
         <input type="text" id="myname" name="textField"></input>
-        <input type="text" id="targetname" name="textField"></input>
-        <button id="callid">Click Me</button>
+        <button id="shareButton">Share to</button>        
+        <input type="text" id="shareCallId" name="textField"></input>        
       </div>
-        <video id="webcamVideo" autoplay playsinline></video>
+        <br>
+        <video id="webcamVideo" autoplay playsinline style="background-color: #ff0000;"></video>
       </span>
       <span>
         <h3>Remote Stream</h3>
-        <video id="remoteVideo" autoplay playsinline style="background-color: #ff0000;"></video>
+          <div>
+            <button id="requestButton">Request from</button>        
+            <input type="text" id="requestCallId" name="textField"></input>            
+          </div>
+          <br>
+        <video id="remoteVideo" autoplay playsinline style="background-color: #ff0000;"></video>                    
       </span>
-
-
     </div>
     <script type="module" src="/remote.js"></script>
 </body>
