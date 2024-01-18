@@ -34,16 +34,29 @@ const socket = new WebSocket(serverString);
 var pc = new RTCPeerConnection({
   sdpSemantics: 'unified-plan',
   iceServers: [
-    {
-        urls: "turn:openrelay.metered.ca:443?transport=tcp",
-        username: "abc@gmail.com",
-        credential: "98376683"
-    },
-    {
-        urls: "turn:openrelay.metered.ca:443?transport=tcp",
-        username: "abc@gmail.com",
-        credential: "98376683"
-    }
+      {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
+      {
+        urls: "turn:standard.relay.metered.ca:80",
+        username: "7f5df105212756b78ba9bf98",
+        credential: "I/4FwLOur99qf+xF",
+      },
+      {
+        urls: "turn:standard.relay.metered.ca:80?transport=tcp",
+        username: "7f5df105212756b78ba9bf98",
+        credential: "I/4FwLOur99qf+xF",
+      },
+      {
+        urls: "turn:standard.relay.metered.ca:443",
+        username: "7f5df105212756b78ba9bf98",
+        credential: "I/4FwLOur99qf+xF",
+      },
+      {
+        urls: "turns:standard.relay.metered.ca:443?transport=tcp",
+        username: "7f5df105212756b78ba9bf98",
+        credential: "I/4FwLOur99qf+xF",
+      },
   ]});
 
 // Create data channel
