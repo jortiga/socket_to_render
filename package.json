@@ -1,14 +1,25 @@
 {
-  "name": "ws",
+  "name": "WebRTC-Example",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An 'as simple as it gets' WebRTC example.",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanet/WebRTC-Example.git"
+  },
+  "keywords": [
+    "webrtc"
+  ],
+  "author": "shane tully",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shanet/WebRTC-Example/issues"
+  },
+  "homepage": "https://github.com/shanet/WebRTC-Example",
   "dependencies": {
-    "ws": "^8.11.0"
+    "ws": "^8.13.0"
   }
 }
