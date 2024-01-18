@@ -1,4 +1,5 @@
-var serverString = 'ws://localhost:3000'
+var serverString =  'wss://websocket-90ug.onrender.com'
+'ws://localhost:3000'
 //"wss://websocket-90ug.onrender.com"
 //'ws://4.tcp.ngrok.io:16530'
 //'wss://0d4c-2401-7000-dbed-9401-4bc-3dfc-5e07-b1bc.ngrok-free.app'
